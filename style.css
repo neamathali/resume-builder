@@ -1,0 +1,270 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.main-header {
+    background: #183b65;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.main-header h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.form-section,
+.preview-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: #183b65;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #2563a6;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    background: white;
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #2563a6;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.generate-btn {
+    background: #183b65;
+    color: white;
+}
+
+.generate-btn:hover {
+    background: #28598c;
+}
+
+.download-btn {
+    background: #16834a;
+    color: white;
+}
+
+.download-btn:hover:not(:disabled) {
+    background: #106b3b;
+}
+
+.download-btn:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+/* Resume preview */
+.resume-paper {
+    --resume-color: #183b65;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 30px;
+    min-height: 500px;
+    overflow-wrap: anywhere;
+}
+
+.resume-name {
+    font-size: 28px;
+    color: var(--resume-color);
+    text-transform: uppercase;
+}
+
+.resume-contact {
+    color: #555;
+    font-size: 13px;
+    margin: 8px 0 20px;
+}
+
+.resume-heading {
+    color: var(--resume-color);
+    font-size: 16px;
+    border-bottom: 2px solid var(--resume-color);
+    margin-top: 20px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+}
+
+.resume-content {
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.resume-github {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.resume-github a {
+    color: var(--resume-color);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 120px 10px;
+    color: #888;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+/* Resume color themes */
+.theme-navy {
+    --resume-color: #183b65;
+}
+
+.theme-teal {
+    --resume-color: #087e8b;
+}
+
+.theme-burgundy {
+    --resume-color: #800020;
+}
+
+.theme-charcoal {
+    --resume-color: #343a40;
+}
+
+/* Resume font options */
+.font-arial {
+    font-family: Arial, sans-serif;
+}
+
+.font-georgia {
+    font-family: Georgia, serif;
+}
+
+.font-calibri {
+    font-family: Calibri, Arial, sans-serif;
+}
+
+.font-verdana {
+    font-family: Verdana, sans-serif;
+}
+
+/* Mobile screen */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .main-header h1 {
+        font-size: 26px;
+    }
+}
+
+/* Printing and saving as PDF */
+@media print {
+    body {
+        background: white;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .main-header,
+    .form-section,
+    .preview-section > h2,
+    .download-btn,
+    footer {
+        display: none !important;
+    }
+
+    .container {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    .preview-section {
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .resume-paper {
+        border: none;
+        padding: 10mm;
+        min-height: auto;
+    }
+
+    .resume-github a {
+        color: var(--resume-color);
+        text-decoration: underline;
+    }
+
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+}

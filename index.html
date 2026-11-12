@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <h1>Resume Builder</h1>
+        <p>Create your professional resume in minutes</p>
+    </header>
+
+    <main class="container">
+
+        <section class="form-section">
+            <h2>Enter Your Details</h2>
+
+            <form id="resumeForm">
+
+                <h3>Personal Information</h3>
+
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number">
+
+                <label for="address">Address</label>
+                <input type="text" id="address" placeholder="Enter your address">
+
+                <h3>Career Objective</h3>
+                <textarea id="objective" placeholder="Write a short career objective"></textarea>
+
+                <h3>Education</h3>
+                <textarea id="education" placeholder="Enter your qualifications, college and passing year"></textarea>
+
+                <h3>Work Experience</h3>
+                <textarea id="experience" placeholder="Enter your work experience or fresher status"></textarea>
+
+                <h3>Skills</h3>
+                <textarea id="skills" placeholder="Enter your skills, separated by commas"></textarea>
+
+                <h3>Projects</h3>
+                <textarea id="projects" placeholder="Describe your projects"></textarea>
+
+                <h3>Languages</h3>
+                <input type="text" id="languages" placeholder="Example: English, Hindi, Telugu">
+
+                <h3>GitHub Repository</h3>
+                <label for="github">GitHub Project URL</label>
+                <input
+                    type="url"
+                    id="github"
+                    placeholder="https://github.com/username/repository"
+                >
+
+                <h3>Resume Design</h3>
+
+                <label for="colorTheme">Choose Resume Color</label>
+                <select id="colorTheme">
+                    <option value="navy">Navy Blue</option>
+                    <option value="teal">Teal</option>
+                    <option value="burgundy">Burgundy</option>
+                    <option value="charcoal">Charcoal</option>
+                </select>
+
+                <label for="fontStyle">Choose Font</label>
+                <select id="fontStyle">
+                    <option value="arial">Arial</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="calibri">Calibri</option>
+                    <option value="verdana">Verdana</option>
+                </select>
+
+                <button type="submit" class="generate-btn">
+                    Generate Resume
+                </button>
+
+            </form>
+        </section>
+
+        <section class="preview-section" id="previewSection">
+            <h2>Resume Preview</h2>
+
+            <div id="resumeOutput" class="resume-paper">
+                <div class="empty-message">
+                    <h2>Your Resume Will Appear Here</h2>
+                    <p>Enter your details and click Generate Resume.</p>
+                </div>
+            </div>
+
+            <button id="downloadBtn" class="download-btn" disabled>
+                Download / Print Resume
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Created with Resume Builder | Free Online Tool</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
